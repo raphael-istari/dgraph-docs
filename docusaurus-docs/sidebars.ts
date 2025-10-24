@@ -1,0 +1,607 @@
+import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+
+// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+/**
+ * Creating a sidebar enables you to:
+ * - create an ordered group of docs
+ * - render a sidebar for each doc of that group
+ * - provide next/previous navigation
+ *
+ * The sidebars can be generated from the filesystem, or explicitly defined here.
+ *
+ * Create as many sidebars as you want.
+ */
+const sidebars: SidebarsConfig = {
+  mainSidebar: [
+    {
+      type: 'doc',
+      id: 'dgraph-overview',
+      label: 'Overview',
+    },
+    {
+      type: 'category',
+      label: 'Design Concepts',
+      items: [
+        'design-concepts/acl-concept',
+        'design-concepts/badger-concept',
+        'design-concepts/clients-concept',
+        'design-concepts/consistency-model',
+        'design-concepts/discovery-concept',
+        'design-concepts/dql-concept',
+        'design-concepts/dql-graphql-layering-concept',
+        'design-concepts/facets-concept',
+        'design-concepts/graphql-concept',
+        'design-concepts/group-concept',
+        'design-concepts/index-tokenize-concept',
+        'design-concepts/lambda-concept',
+        'design-concepts/minimizing-network-calls',
+        'design-concepts/namespace-tenant-concept',
+        'design-concepts/network-call-minimization-concept',
+        'design-concepts/posting-list-concept',
+        'design-concepts/protocol-buffers-concept',
+        'design-concepts/queries-process',
+        'design-concepts/raft',
+        'design-concepts/relationships-concept',
+        'design-concepts/replication-concept',
+        'design-concepts/transaction-mutation-concept',
+        'design-concepts/transactions-concept',
+        'design-concepts/wal-memtable-concept',
+        'design-concepts/workers-concept',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'GraphQL API',
+      items: [
+        'graphql/_index',
+        {
+          type: 'category',
+          label: 'Quick Start',
+          items: [
+            'graphql/quick-start/index',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Schema',
+          items: [
+            'graphql/schema/_index',
+            'graphql/schema/dgraph-schema',
+            'graphql/schema/documentation',
+            'graphql/schema/graph-links',
+            'graphql/schema/migration',
+            'graphql/schema/reserved',
+            'graphql/schema/types',
+            {
+              type: 'category',
+              label: 'Directives',
+              items: [
+                'graphql/schema/directives/auth',
+                'graphql/schema/directives/deprecated',
+                'graphql/schema/directives/directive-dgraph',
+                'graphql/schema/directives/directive-withsubscription',
+                'graphql/schema/directives/embedding',
+                'graphql/schema/directives/generate',
+                'graphql/schema/directives/ids',
+                'graphql/schema/directives/search',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Queries',
+          items: [
+            'graphql/queries/queries-overview',
+            'graphql/queries/aggregate',
+            'graphql/queries/and-or-not',
+            'graphql/queries/cached-results',
+            'graphql/queries/cascade',
+            'graphql/queries/order-page',
+            'graphql/queries/persistent-queries',
+            'graphql/queries/search-filtering',
+            'graphql/queries/skip-include',
+            'graphql/queries/vector-similarity',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Mutations',
+          items: [
+            'graphql/mutations/mutations-overview',
+            'graphql/mutations/add',
+            'graphql/mutations/deep',
+            'graphql/mutations/delete',
+            'graphql/mutations/update',
+            'graphql/mutations/upsert',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Subscriptions',
+          items: [
+            'graphql/subscriptions/index',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Custom',
+          items: [
+            'graphql/custom/custom-overview',
+            'graphql/custom/custom-dql',
+            'graphql/custom/directive',
+            'graphql/custom/field',
+            'graphql/custom/mutation',
+            'graphql/custom/query',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Lambda',
+          items: [
+            'graphql/lambda/lambda-overview',
+            'graphql/lambda/field',
+            'graphql/lambda/mutation',
+            'graphql/lambda/query',
+            'graphql/lambda/webhook',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Federation',
+          items: [
+            'graphql/federation/index',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'GraphQL Clients',
+          items: [
+            'graphql/graphql-clients/_index',
+            'graphql/graphql-clients/graphql-ide',
+            'graphql/graphql-clients/graphql-ui',
+            {
+              type: 'category',
+              label: 'Endpoint',
+              items: [
+                'graphql/graphql-clients/endpoint/graphql-get-request',
+                'graphql/graphql-clients/endpoint/graphql-request',
+                'graphql/graphql-clients/endpoint/graphql-response',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Admin',
+          items: [
+            'graphql/admin/index',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Security',
+          items: [
+            'graphql/security/_index',
+            'graphql/security/anonymous-access',
+            'graphql/security/auth-tips',
+            'graphql/security/cors',
+            'graphql/security/graphtraversal-rules',
+            'graphql/security/jwt',
+            'graphql/security/mutations',
+            'graphql/security/RBAC-rules',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'DQL',
+      items: [
+        'dql/_index',
+        'dql/dql-get-started',
+        'dql/dql-schema',
+        {
+          type: 'category',
+          label: 'Syntax',
+          items: [
+            'dql/dql-syntax/_index',
+            'dql/dql-syntax/dql-mutation',
+            'dql/dql-syntax/dql-query',
+            'dql/dql-syntax/dql-rdf',
+            'dql/dql-syntax/json-mutation-format',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Mutations',
+          items: [
+            'dql/mutations/_index',
+            'dql/mutations/external-ids-upsert-block',
+            'dql/mutations/uid-upsert',
+            'dql/mutations/val-upsert',
+          ],
+        },
+        'dql/predicate-indexing',
+        {
+          type: 'category',
+          label: 'Clients',
+          items: [
+            'dql/clients/_index',
+            'dql/clients/csharp',
+            'dql/clients/go',
+            'dql/clients/java',
+            {
+              type: 'category',
+              label: 'JavaScript',
+              items: [
+                'dql/clients/javascript/grpc',
+                'dql/clients/javascript/http',
+              ],
+            },
+            'dql/clients/python',
+            'dql/clients/raw-http',
+            'dql/clients/unofficial-clients',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Tips',
+          items: [
+            'dql/tips/index',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Cloud',
+      items: [
+        'cloud/_index',
+        'cloud/introduction',
+        'cloud/provision-backend',
+        'cloud/advanced-queries',
+        'cloud/cloud-multitenancy',
+        'cloud/migrating-from-hosted-dgraph',
+        {
+          type: 'category',
+          label: 'Admin',
+          items: [
+            'cloud/admin/_index',
+            'cloud/admin/authentication',
+            'cloud/admin/clone',
+            'cloud/admin/drop-data',
+            'cloud/admin/import-export',
+            'cloud/admin/monitoring',
+            'cloud/admin/overview',
+            'cloud/admin/schema',
+            'cloud/admin/schema-modes',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Cloud API',
+          items: [
+            'cloud/cloud-api/_index',
+            'cloud/cloud-api/authentication',
+            'cloud/cloud-api/backend',
+            'cloud/cloud-api/backup',
+            'cloud/cloud-api/lambda',
+            'cloud/cloud-api/overview',
+            'cloud/cloud-api/schema',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Deploy',
+      items: [
+        'deploy/_index',
+        'deploy/cluster-setup',
+        'deploy/cluster-checklist',
+        'deploy/config',
+        'deploy/monitoring',
+        'deploy/troubleshooting',
+        'deploy/cli-command-reference',
+        'deploy/dgraph-alpha',
+        'deploy/dgraph-zero',
+        'deploy/decrypt',
+        {
+          type: 'category',
+          label: 'Installation',
+          items: [
+            'deploy/installation/_index',
+            'deploy/installation/download',
+            'deploy/installation/production-checklist',
+            'deploy/installation/single-host-setup',
+            'deploy/installation/lambda-server',
+            {
+              type: 'category',
+              label: 'Kubernetes',
+              items: [
+                'deploy/installation/kubernetes/cluster-types',
+                'deploy/installation/kubernetes/ha-cluster',
+                'deploy/installation/kubernetes/monitoring-cluster',
+                'deploy/installation/kubernetes/single-server-cluster',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Admin',
+          items: [
+            'deploy/admin/dgraph-administration',
+            'deploy/admin/data-compression',
+            'deploy/admin/log-format',
+            'deploy/admin/metrics',
+            'deploy/admin/tracing',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Security',
+          items: [
+            'deploy/security/ports-usage',
+            'deploy/security/tls-configuration',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Enterprise Features',
+      items: [
+        'enterprise-features/_index',
+        'enterprise-features/license',
+        'enterprise-features/multitenancy',
+        'enterprise-features/access-control-lists',
+        'enterprise-features/audit-logs',
+        'enterprise-features/binary-backups',
+        'enterprise-features/change-data-capture',
+        'enterprise-features/encryption-at-rest',
+        'enterprise-features/learner-nodes',
+        'enterprise-features/lsbackup',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'How-to Guides',
+      items: [
+        'howto/_index',
+        'howto/completion',
+        'howto/concurrent-modification-java-multithreaded',
+        'howto/dgraph-sentry-integration',
+        'howto/dql-schema-request',
+        'howto/drop-data',
+        'howto/jepsen-tests',
+        'howto/load-balancing-nginx',
+        'howto/login-system',
+        'howto/retrieving-debug-information',
+        'howto/update-dgraph-types',
+        'howto/upserts',
+        'howto/using-debug-tool',
+        'howto/using-increment-tool',
+        {
+          type: 'category',
+          label: 'Command Line',
+          items: [
+            'howto/commandline/_index',
+            'howto/commandline/about-cli',
+            'howto/commandline/create-cli',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Export Data',
+          items: [
+            'howto/exportdata/about-export',
+            'howto/exportdata/export-data',
+            'howto/exportdata/export-data-cloud',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Import Data',
+          items: [
+            'howto/importdata/about_import',
+            'howto/importdata/bulk-loader',
+            'howto/importdata/live-loader',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Learn',
+      items: [
+        'learn/_index',
+        {
+          type: 'category',
+          label: 'Developer',
+          items: [
+            'learn/developer/_index',
+            {
+              type: 'category',
+              label: 'React',
+              items: [
+                'learn/developer/react/react-introduction',
+                'learn/developer/react/react-provision-backend',
+                {
+                  type: 'category',
+                  label: 'GraphQL',
+                  items: [
+                    'learn/developer/react/graphql/graphql-schema',
+                    'learn/developer/react/graphql/design-app-schema',
+                    'learn/developer/react/graphql/graphql-operations',
+                    'learn/developer/react/graphql/load-schema-to-dgraph-cloud',
+                    'learn/developer/react/graphql/react-graphql-queries',
+                    'learn/developer/react/graphql/react-graphql-mutations',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'React UI',
+                  items: [
+                    'learn/developer/react/react-ui/tech-stack',
+                    'learn/developer/react/react-ui/react-app-boiler-plate',
+                    'learn/developer/react/react-ui/connect-to-dgraph-cloud',
+                    'learn/developer/react/react-ui/react-routing',
+                    'learn/developer/react/react-ui/react-ui-graphql-queries',
+                    'learn/developer/react/react-ui/react-ui-graphql-mutations',
+                  ],
+                },
+                'learn/developer/react/react-conclusion',
+                {
+                  type: 'category',
+                  label: 'Todo App Tutorial',
+                  items: [
+                    'learn/developer/todo-app-tutorial/todo-overview',
+                    'learn/developer/todo-app-tutorial/todo-schema-design',
+                    'learn/developer/todo-app-tutorial/todo-auth-rules',
+                    'learn/developer/todo-app-tutorial/todo-auth0-jwt',
+                    'learn/developer/todo-app-tutorial/todo-firebase-jwt',
+                    'learn/developer/todo-app-tutorial/todo-UI',
+                    'learn/developer/todo-app-tutorial/todo-deploy',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Sample Apps',
+                  items: [
+                    'learn/developer/sample-apps/charts',
+                    'learn/developer/sample-apps/devjokes',
+                    'learn/developer/sample-apps/pokedex',
+                    'learn/developer/sample-apps/surveyo',
+                    'learn/developer/sample-apps/todos',
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Data Engineer',
+          items: [
+            'learn/data-engineer/_index',
+            {
+              type: 'category',
+              label: 'Data Model 101',
+              items: [
+                'learn/data-engineer/data-model-101/dm-101-introduction',
+                'learn/data-engineer/data-model-101/relational-data-model',
+                'learn/data-engineer/data-model-101/graph-data-model',
+                'learn/data-engineer/data-model-101/rel-query',
+                'learn/data-engineer/data-model-101/graph-query',
+                'learn/data-engineer/data-model-101/dm-101-conclusion',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Get Started with Dgraph',
+              items: [
+                'learn/data-engineer/get-started-with-dgraph/tutorial-1/index',
+                'learn/data-engineer/get-started-with-dgraph/tutorial-2/index',
+                'learn/data-engineer/get-started-with-dgraph/tutorial-3/index',
+                'learn/data-engineer/get-started-with-dgraph/tutorial-4/index',
+                'learn/data-engineer/get-started-with-dgraph/tutorial-5/index',
+                'learn/data-engineer/get-started-with-dgraph/tutorial-6/index',
+                'learn/data-engineer/get-started-with-dgraph/tutorial-7/index',
+                'learn/data-engineer/get-started-with-dgraph/tutorial-8/index',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Administrator',
+          items: [
+            'learn/administrator/_index',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Migration',
+      items: [
+        'migration/_index',
+        'migration/about-data-migration',
+        'migration/loading-csv-data',
+        'migration/migrate-tool',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'GraphQL-DQL Integration',
+      items: [
+        'graphql-dql/_index',
+        'graphql-dql/graphql-dgraph',
+        'graphql-dql/graphql-dql-schema',
+        'graphql-dql/dql-for-graphql',
+        'graphql-dql/graphql-data-loading',
+        'graphql-dql/graphql-data-migration',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Query Language Reference',
+      items: [
+        'query-language/_index',
+        'query-language/graphql-fundamentals',
+        'query-language/graphql-variables',
+        'query-language/fragments',
+        'query-language/functions',
+        'query-language/aggregation',
+        'query-language/groupby',
+        'query-language/sorting',
+        'query-language/pagination',
+        'query-language/facets',
+        'query-language/alias',
+        'query-language/count',
+        'query-language/value-variables',
+        'query-language/query-variables',
+        'query-language/math-on-value-variables',
+        'query-language/multiple-query-blocks',
+        'query-language/connecting-filters',
+        'query-language/cascade-directive',
+        'query-language/ignorereflex-directive',
+        'query-language/normalize-directive',
+        'query-language/expand-predicates',
+        'query-language/recurse-query',
+        'query-language/kshortest-path-queries',
+        'query-language/indexing-custom-tokenizers',
+        'query-language/language-support',
+        'query-language/debug',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Ratel',
+      items: [
+        'ratel/_index',
+        'ratel/overview',
+        'ratel/connection',
+        'ratel/console',
+        'ratel/schema',
+        'ratel/cluster',
+        'ratel/backups',
+      ],
+    },
+    {
+      type: 'doc',
+      id: 'dgraph-glossary',
+      label: 'Glossary',
+    },
+    {
+      type: 'doc',
+      id: 'releases/index',
+      label: 'Releases',
+    },
+  ],
+};
+
+export default sidebars;
